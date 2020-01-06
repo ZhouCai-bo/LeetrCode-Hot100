@@ -9,12 +9,14 @@ public:
     node *head, *tail;
     int size = 0, min = 0;
     MinStack() {
-        head = tail = new node();
+        
     }
     
     void push(int x) {
         if(size == 0)
         {
+            head = tail = new node();
+            head->prev = nullptr;
             head->value = x;
             size++;
             min = x;
@@ -25,7 +27,6 @@ public:
         temp->value = x;
         temp->prev = tail;
         tail = temp;
-
         size++;
         if(x<min)
             min = x;
