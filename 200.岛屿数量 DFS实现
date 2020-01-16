@@ -9,11 +9,11 @@ public:
 
         if(i - 1 >= 0 && grid[i - 1][j] == '1')
             dfs(grid , i - 1 , j);
-        if(i + 1 < cln && grid[i + 1][j] == '1')
+        if(i + 1 < row && grid[i + 1][j] == '1')
             dfs(grid , i + 1 , j);
         if(j - 1 >= 0 && grid[i][j - 1] == '1')
             dfs(grid , i , j - 1);
-        if(j + 1 < row && grid[i][j + 1] == '1')
+        if(j + 1 < cln && grid[i][j + 1] == '1')
             dfs(grid , i , j + 1);
         
 
