@@ -1,35 +1,46 @@
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
 class Solution {
 public:
     ListNode* sortList(ListNode* head) 
     {
-        ListNode *begin = head;
-        ListNode *curr , *temp;
-        int min = 0;
-        while(begin && begin->next)
+        return mergeSort(head);
+    }
+
+    ListNode* mergeSort(ListNode* head)
+    {
+        if(!head || !head->next)
+            return head;
+        //快慢指针分割链表
+        ListNode *fast = head;
+        ListNode *slow = head;
+        ListNode *mid = head;
+        while(fast && fast->next)
         {
-            curr = begin;
-            temp = begin;
-            min = curr->val;
-            while(curr && (curr=curr->next))
-            {
-                if(curr->val < min)
-                {
-                    temp = curr;
-                    min = curr->val;
-                }
-            }
-            temp->val = begin->val;
-            begin->val = min;
-            begin = begin->next;
+            fast = fast->next->next;
+            //mid指向slow的前一个位置，将来设置其下一节点为null
+            mid = slow;
+            slow = slow->next;
+            
         }
-        return head;
+        mid->next = nullptr;
+        ListNode *L1 = mergeSort(head);
+        ListNode *L2 = mergeSort(slow);
+        return merge(L1,L2);
+    }
+    ListNode* merge(ListNode *L1 , ListNode *L2)
+    {
+        if(!L1)
+            return L2;
+        if(!L2)
+            return L1;
+        if(L1->val < L2->val)
+        {
+            L1->next = merge(L1->next , L2);
+            return L1;
+        }
+        else
+        {
+            L2->next = merge(L2->next , L1);
+            return L2;
+        }     
     }
 };
