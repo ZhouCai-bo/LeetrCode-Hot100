@@ -1,0 +1,79 @@
+class Solution 
+	{
+	public:
+		//使用map记录访问访问情况
+		map<pair<int, int>, bool> m;
+
+		int maximalSquare(vector<vector<char>>& matrix) 
+		{
+			int area = 0;
+			queue<pair<int, int>> q;
+			queue<pair<int, int>> tempq;
+
+			for (int i = 0; i < matrix.size(); i++)
+			{
+				for (int j = 0; j < matrix[0].size(); j++)
+				{
+					int temparea = 1;
+					//若当前元素为1
+					if (matrix[i][j] == '1')
+					{
+						//做广度遍历，每次新入队列的元素数满足3,5,7,9，n+2时则正方形的边长+1
+						q.push(pair<int, int>(i, j));
+						//清理map
+						m.clear();
+						
+						int temparea = isSquare(matrix, q, 1, i, j);
+						if (temparea > area)
+							area = temparea;
+
+					}
+				}
+			}
+			return area*area;
+		}
+
+		int isSquare(vector<vector<char>>& matrix, queue<pair<int, int>> &q, int layer, int lefttop_a, int lefttop_b)
+		{
+			queue<pair<int, int>> tempq;
+
+			while (!q.empty())
+			{
+				//记录入队列的节点个数
+				//int cnt = 0;
+				auto temp = q.front();
+				int a = temp.first;
+				int b = temp.second;
+				q.pop();
+				m.insert(pair<pair<int, int>, bool>(pair<int, int>(a, b), 1));
+
+				//只考虑右边、下边、对角的扩展
+				//同时避免重复入队列
+				if (a + 1 < matrix.size() && matrix[a + 1][b] == '1' && (m.find(pair<int, int>(a + 1, b)) == m.end()))
+				{
+					tempq.push(pair<int, int>(a + 1, b));
+					m.insert(pair<pair<int, int>, bool>(pair<int, int>(a + 1, b), 1));
+				}
+
+				if (b + 1 < matrix[0].size() && matrix[a][b + 1] == '1' && (m.find(pair<int, int>(a, b + 1)) == m.end()))
+				{
+					tempq.push(pair<int, int>(a, b + 1));
+					m.insert(pair<pair<int, int>, bool>(pair<int, int>(a, b + 1), 1));
+				}
+			}
+			//检查对角线
+			if (lefttop_a + layer < matrix.size() &&
+				lefttop_b + layer < matrix[0].size() &&
+				matrix[lefttop_a + layer][lefttop_b + layer] == '1' &&
+				(m.find(pair<int, int>(lefttop_a + layer, lefttop_b + layer)) == m.end()))
+			{
+				tempq.push(pair<int, int>(lefttop_a + layer, lefttop_b + layer));
+				m.insert(pair<pair<int, int>, bool>(pair<int, int>(lefttop_a + layer, lefttop_b + layer), 1));
+			}
+			//若临时队列长度满足条件，则检查是否满足边长+1的正方形，不满足条件则返回当前长度
+			if (tempq.size() != 1 + 2 * layer)
+				return layer;
+			return isSquare(matrix, tempq, layer + 1, lefttop_a, lefttop_b);
+		}
+
+	};
