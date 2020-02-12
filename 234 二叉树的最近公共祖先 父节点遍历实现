@@ -1,0 +1,41 @@
+class Solution 
+	{
+	public:
+		map<TreeNode *, TreeNode *> parents;
+
+		TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)
+		{
+			parents.insert(pair<TreeNode *, TreeNode *>(root, nullptr));
+			recurse(root, p);
+			recurse(root, q);
+
+			vector<TreeNode *> v;
+			//转存q的所有祖先
+			while (q)
+			{
+				v.push_back(q);
+				q = parents[q];
+			}
+			while (p)
+			{
+				for (auto a : v)
+				{
+					if (a == p)
+						return a;
+				}
+				p = parents[p];
+			}
+			return root;
+			
+		}
+
+		void recurse(TreeNode* curr, TreeNode* des)
+		{
+			if (!curr || curr == des)
+				return;
+			parents.insert(pair<TreeNode *, TreeNode *>(curr->left, curr));
+			parents.insert(pair<TreeNode *, TreeNode *>(curr->right, curr));
+			recurse(curr->left, des);
+			recurse(curr->right, des);
+		}
+	};
