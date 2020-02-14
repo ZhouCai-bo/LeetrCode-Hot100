@@ -140,3 +140,9 @@ globalmax = max(globalmax, cmax)
 链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/guan-fang-di-gui-da-an-ti-jie-yi-dong-by-charlotte/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+# 238.除自身外数组元素的乘积
+这几天递归写的有点多，看到先想递归。<br/>
+大体思路是递归阶段不断向下传前面元素的乘积，然后回溯阶段不断返回后面元素的乘积，前后相乘得到当前元素的除自身外数组的乘积。<br/>
+就是空间复杂度有点高？
+
