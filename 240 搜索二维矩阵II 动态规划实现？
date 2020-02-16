@@ -1,0 +1,21 @@
+class Solution {
+	public:
+		bool searchMatrix(vector<vector<int>>& matrix, int target) {
+			if (matrix.size() == 0 || matrix[0].size() == 0)
+				return false;
+			int row = matrix.size();
+			int cln = matrix[0].size();
+			//从右上至左下遍历
+			int i = 0, j = cln - 1;
+			while (i < row && j >= 0)
+			{
+				if (matrix[i][j] == target)
+					return true;
+				if (matrix[i][j] < target)
+					i++;
+				else if (matrix[i][j] > target)
+					j--;
+			}
+			return false;
+		}
+	};
