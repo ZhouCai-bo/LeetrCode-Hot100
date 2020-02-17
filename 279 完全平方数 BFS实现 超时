@@ -1,0 +1,35 @@
+class Solution {
+	public:
+		struct node
+		{
+			int val;
+			int lel;
+			node(int x, int y) :val(x), lel(y){}
+		};
+
+		int numSquares(int n) {
+			queue<node> q;
+			vector<int> visited;
+
+			q.push(node(n, 0));
+
+			while (!q.empty())
+			{
+				int val = q.front().val;
+				int lel = q.front().lel;
+				q.pop();
+				if (val == 0)
+					return lel;
+				for (int i = 1; i*i <= val; i++)
+				{
+					int nval = val - i*i;
+					if (find(visited.begin(), visited.end(), nval) == visited.end())
+					{
+						q.push(node(nval, lel + 1));
+						visited.push_back(nval);
+					}
+				}
+			}
+			return 0;
+		}
+	};
