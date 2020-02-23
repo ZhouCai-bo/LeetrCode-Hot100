@@ -239,7 +239,7 @@ TIPS：此时 f = 0，s = nb ；<br/>
 采用DFS遍历，剪枝策略：buyprice < prices[index]。<br/>
 递归的深度太大导致超时。
 
-# 309. 最佳买卖股票时机含冷冻期  超时
+# 309. 最佳买卖股票时机含冷冻期 DP实现 
 https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/dong-tai-gui-hua-shen-ru-fen-xi-by-wang-yan-19/
 
 # 312.戳气球
