@@ -29,6 +29,9 @@ https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/4-xun-zhao
 好难...<br/>
 https://leetcode-cn.com/problems/regular-expression-matching/solution/dong-tai-gui-hua-zen-yao-cong-0kai-shi-si-kao-da-b/
 
+# 11. 盛最多水的容器
+朴素解法，双层循环遍历，同时做一个剪枝：第一层循环由左至右，到第二层循环由右至左，等于是遍历的容器左右索引是向里缩进的，那么如果下一次遍历的左或右边界的高度小于其左侧或右侧的任意高度，则本次遍历的容器容积必定小于全局最大，continue即可。
+
 # 15.三数之和
 主要问题在消除重复以及降低时间复杂度，朴素解法三层循环的时间复杂度高达O(n*n*n)，先对数组进行排序，然后使用双指针的方式把其中两层循环缩减为一层循环，同时略去重复的答案。
 
