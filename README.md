@@ -25,6 +25,10 @@ https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/4-xun-zhao
 参数设置：med遍历数组的索引，max保存当前最长子串的长度，mL和mR保存当前最长子串的左右索引；cur保存当前子串的长度，L和R不断扩散寻常当前子串的最大左右索引。<br/>
 优化：遍历到某个元素有右边有相同元素时，将相同元素加入当前子串，并且不再遍历（跳过相同元素）。
 
+# 10. 正则表达式匹配
+好难...<br/>
+https://leetcode-cn.com/problems/regular-expression-matching/solution/dong-tai-gui-hua-zen-yao-cong-0kai-shi-si-kao-da-b/
+
 # 15.三数之和
 主要问题在消除重复以及降低时间复杂度，朴素解法三层循环的时间复杂度高达O(n*n*n)，先对数组进行排序，然后使用双指针的方式把其中两层循环缩减为一层循环，同时略去重复的答案。
 
