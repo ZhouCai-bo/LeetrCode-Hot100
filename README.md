@@ -41,6 +41,9 @@ https://leetcode-cn.com/problems/regular-expression-matching/solution/dong-tai-g
 # 17. 电话号码的字母组合
 递归回溯遍历所有可能。
 
+# 19. 删除链表的倒数第N个节点
+数组转存，分情况考虑链接节点。
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
