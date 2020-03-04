@@ -71,6 +71,12 @@ https://leetcode-cn.com/problems/regular-expression-matching/solution/dong-tai-g
 # 23.合并K个排序链表
 每次找到链表头元素最小的节点，将该节点接在目标节点后面，然后缩小被使用链表头的链表，直至集合中所有链表都为空。
 
+# 31.下一个排列
+应该是数学归纳法。。。<br/>
+* 第一步：从后往前找到第一个不和谐元素，就是找到第一个nums[i]满足nums[i]<nums[i+1]，标记这个索引为slice；
+* 第二步：找到在区间(slice,nums.size()-1]中大于nums[slice]的最小元素，标记索引为index；
+* 第三步：交换index和slice位置的元素，然后对slice之后的元素重排列。
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
