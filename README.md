@@ -77,6 +77,11 @@ https://leetcode-cn.com/problems/regular-expression-matching/solution/dong-tai-g
 * 第二步：找到在区间(slice,nums.size()-1]中大于nums[slice]的最小元素，标记索引为index；
 * 第三步：交换index和slice位置的元素，然后对slice之后的元素重排列。
 
+# 32.最长有效括号
+* 参数说明：数组res，res[i]代表第i个括号是否可以和另一括号匹配；左括号栈left，存放遍历到的左括号索引，全局最大值max，当前最大值curr；
+* 遍历字符串，若s[i]=='('则i进栈；若s[i]==')'且栈非空，则更新res[i]=res[left.top()]=1；其他情况跳过；
+* 计算res中连续为1的元素子集的长度，得到全局最大值。
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
