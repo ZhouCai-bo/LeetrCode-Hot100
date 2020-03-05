@@ -88,6 +88,9 @@ https://leetcode-cn.com/problems/regular-expression-matching/solution/dong-tai-g
 * 若异常区间在左：考虑是否落在正常右区间，是则进右区间，否则进左区间；
 * 若无异常区间，则按正常二分查找判断。
 
+# 34.在排序数组中查找元素的第一个和最后一个位置
+https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/solution/czhong-geng-wei-jian-ji-de-er-fen-cha-zhao-by-xiao/
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
