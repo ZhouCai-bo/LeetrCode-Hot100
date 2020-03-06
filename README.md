@@ -91,6 +91,10 @@ https://leetcode-cn.com/problems/regular-expression-matching/solution/dong-tai-g
 # 34.在排序数组中查找元素的第一个和最后一个位置
 https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/solution/czhong-geng-wei-jian-ji-de-er-fen-cha-zhao-by-xiao/
 
+# 39.组合总和
+递归遍历所有组合，剪枝：if(curr>target) return; <br/>
+没超时就很神奇。。。
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
