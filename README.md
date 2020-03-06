@@ -95,6 +95,12 @@ https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sort
 递归遍历所有组合，剪枝：if(curr>target) return; <br/>
 没超时就很神奇。。。
 
+# 42.接雨水 超时
+每层遍历一次，用每层的左右最靠近0和size()-1的非零元素作为边界，对于每层：
+* 若height[i]==0，则rain+=1；
+* 若height[i]!=1，则height[i]--；<br/>
+上述操作相当于每层都使当前所有的柱子高度减一，直至所有柱子高度都为1，或者只剩一根柱子。
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
