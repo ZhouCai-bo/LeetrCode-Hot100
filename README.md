@@ -101,6 +101,9 @@ https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sort
 * 若height[i]!=1，则height[i]--；<br/>
 上述操作相当于每层都使当前所有的柱子高度减一，直至所有柱子高度都为1，或者只剩一根柱子。
 
+# 42.接雨水
+https://leetcode-cn.com/problems/trapping-rain-water/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
