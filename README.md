@@ -104,6 +104,9 @@ https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sort
 # 42.接雨水
 https://leetcode-cn.com/problems/trapping-rain-water/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/
 
+# 46.全排列
+递归找所有组合，用一个set做重复值过滤。
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
