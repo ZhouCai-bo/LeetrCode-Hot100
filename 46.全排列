@@ -1,0 +1,24 @@
+class Solution {
+public:
+	vector<vector<int>> res;
+	set<int> used;
+	vector<vector<int>> permute(vector<int>& nums) {
+		recurse(nums, 0, vector<int>());
+		return res;
+	}
+	void recurse(vector<int> &nums, int index, vector<int> temp){
+		if (index >= nums.size()){
+			res.push_back(temp);
+			return;
+		}
+		for (int i = 0; i < nums.size(); i++){
+			if (used.find(nums[i]) == used.end()){
+				temp.push_back(nums[i]);
+				used.insert(nums[i]);
+				recurse(nums, index + 1, temp);
+				temp.pop_back();
+				used.erase(nums[i]);
+			}
+		}
+	}
+}; 
