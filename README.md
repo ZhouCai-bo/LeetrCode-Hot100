@@ -159,6 +159,11 @@ https://leetcode-cn.com/problems/trapping-rain-water/solution/xiang-xi-tong-su-d
 * 若scan遍历到为0的元素，则要向前置换，因为置换后的元素可能为1或者2，为1则可以继续遍历，为2则需要再次向后置换。因此发生置换后我们先不改变scan的索引，而要再次进循环进行一次判定。
 * 循环结束条件：scan不小于left，同时还要保证left<right。
 
+# 76.最小覆盖子串
+滑动窗口技艺不精，想到了求子串的题一般是用滑动窗口，但没想到怎么滑。。。
+参考题解：
+https://leetcode-cn.com/problems/minimum-window-substring/solution/hua-dong-chuang-kou-suan-fa-tong-yong-si-xiang-by-/
+
 # 78.子集
 求排列的题一般我会想到递归回溯的方法，在题目要求不重复的时候就要考虑如何去重，以及如何剪枝来缩小递归的深度。<br/>
 这道题我其实是模拟了人脑的思考方式，第一次可以取[0,n]之间的任意一个元素，第二次只可以取剩余没有取过得的元素，每次取元素后将结果加入数组，直至元素取完。还要注意空集的存在，在返回前push进一个空数组。
