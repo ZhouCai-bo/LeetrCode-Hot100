@@ -1,0 +1,40 @@
+class Solution {
+public:
+	vector<vector<int>> res;
+	bool exist(vector<vector<char>>& board, string word) {
+		int index = 0, w_size = word.size();
+		for (int i = 0; i < board.size();i++)
+		{
+			for (int j = 0; j < board[0].size();j++)
+			{
+				if (board[i][j] == word[0] && find(board, word, 0, i, j))
+					return true;
+			}
+		}
+		return false;
+	}
+
+	bool find(vector<vector<char>> &board, string &word, int index, int a, int b)
+	{
+		int next = index + 1;
+		if (next >= word.size())
+			return true;
+		char temp = board[a][b];
+		board[a][b] = '#';
+
+		if (a - 1 >= 0 && board[a - 1][b] == word[next] && find(board, word, index + 1, a - 1, b))
+			return true;
+
+		if (a + 1 < board.size() && board[a + 1][b] == word[next] && find(board, word, index + 1, a + 1, b))
+			return true;
+
+		if (b - 1 >= 0 && board[a][b - 1] == word[next] && find(board, word, index + 1, a, b - 1))
+			return true;
+
+		if (b + 1 < board[0].size() && board[a][b + 1] == word[next] && find(board, word, index + 1, a, b + 1))
+			return true;
+
+		board[a][b] = temp;
+		return false;
+	}
+}; 
