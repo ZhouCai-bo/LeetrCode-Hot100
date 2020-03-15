@@ -180,6 +180,10 @@ https://leetcode-cn.com/problems/minimum-window-substring/solution/hua-dong-chua
 * 从左至右遍历数组，若nums[i]>=st[top]，则入栈；
 * 若nums[i]<st[top]，则说明可以计算当前栈内一部分柱所能形成的矩形面积，计算并更新最大值。
 
+# 85.最大矩形
+* 借用84的思想，按行遍历，将每行的柱高传入计算函数，算的本行的最大矩形，随着遍历的深入，每行的柱高阿也在整体提高。
+https://leetcode-cn.com/problems/maximal-rectangle/solution/dan-diao-di-zeng-zhan-dpqiao-miao-jie-jue-by-wallc/
+
 <a href="#0-">`返回首行`</a>
 <a id="100-"/>
 
