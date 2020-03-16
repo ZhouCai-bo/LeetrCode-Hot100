@@ -184,6 +184,12 @@ https://leetcode-cn.com/problems/minimum-window-substring/solution/hua-dong-chua
 * 借用84的思想，按行遍历，将每行的柱高传入计算函数，算的本行的最大矩形，随着遍历的深入，每行的柱高阿也在整体提高。
 https://leetcode-cn.com/problems/maximal-rectangle/solution/dan-diao-di-zeng-zhan-dpqiao-miao-jie-jue-by-wallc/
 
+# 94.二叉树的中序遍历
+* 设置一个栈，储存待访问的的中间节点；设置一个当前遍历节点从根开始；
+* 当前节点不为空，则压栈，遍历到其左节点；
+* 当前节点为空，且栈不空，则遍历到栈顶元素的右节点，出栈，同时在结果数组里添加元素；
+* 当前节点为空，且栈为空，则遍历结束。
+
 <a href="#0-">`返回首行`</a>
 <a id="100-"/>
 
