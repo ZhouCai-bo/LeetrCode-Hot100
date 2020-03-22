@@ -234,6 +234,10 @@ https://leetcode-cn.com/problems/maximal-rectangle/solution/dan-diao-di-zeng-zha
 
 * 函数int find(vector<int>& inorder, int curr_val, int target, set<int> &used)说明：set的作用是记录已经使用过的节点，当一个节点在inorder序列中的左右响铃节点都被使用后，就说明他已经没有左右子树了，此时可以返回0，其他情况下，找到curr_val和target的位置，对比返回即可。
 
+# 114.二叉树展开为链表
+看了题解。。。本来是想递归，没找到一种对右节点的处理方式，看了题解才发现这种骚操作.<br/>
+对于每一步，若它的左子树存在，则将它的右子树接在左子树的最右节点的右子树位置，再将左子树接在右子树的位置，同时左子树指针置空。
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
