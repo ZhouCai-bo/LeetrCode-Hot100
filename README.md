@@ -243,6 +243,11 @@ https://leetcode-cn.com/problems/maximal-rectangle/solution/dan-diao-di-zeng-zha
 * 当前节点的左子树不存在时，使用栈顶元素插入到当前节点的右子树，再更新当前元素为curr->right
 * 退出条件：stack.empty() && !curr
 
+# 121.买卖股票的最佳时机
+遍历数组，找到一次交易的最大收益。
+* 参数设置：left买入的日期，right卖出的日期
+* 遍历设置: 若prices[left]>prices[right]，则本次交易必为负值，跳过，并且更新left=right、right++，因为prices[left]要尽可能的小；否则，更新max_val，right继续递增。
+
 # 142.环形链表2
 设置两个指针，前指针和后指针，前指针每次走两步，后指针每次走一步。如果前指针无法继续行进则证明无环。
 
