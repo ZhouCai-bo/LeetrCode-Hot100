@@ -536,3 +536,10 @@ https://leetcode-cn.com/problems/burst-balloons/solution/dui-fen-zhi-fa-ti-jie-d
    * 偷：当前节点的值加上他的左右孩子不偷的值；
    * 不偷：左右孩子偷与不偷的最大值之和。
 
+# 347. 前k个高频元素
+* 第一步用一个unordered_map存储元素的出现频率。
+* 第二步用一个unordered_multimap转存频率对应的元素
+* 然后循环i=nums.size()次，每次找到出现频率为i的元素范围，加入结果数组。
+
+不知道怎么就想到用multimap，可能一直想试试这个容器，终于找到了机会。感觉第一步的unordered_map可以不用，直接用一个unordered_multimap先存储再转存也可以。
+
