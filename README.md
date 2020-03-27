@@ -536,6 +536,13 @@ https://leetcode-cn.com/problems/burst-balloons/solution/dui-fen-zhi-fa-ti-jie-d
    * 偷：当前节点的值加上他的左右孩子不偷的值；
    * 不偷：左右孩子偷与不偷的最大值之和。
 
+# 338. 比特位计数
+对二进制数做右移运算（二进制右移相当于十进制除2）：
+* 对于奇数，右移会失去一个1；
+* 对于偶数，右移后1的个数不变。
+* 状态定义：dp[i]表示i的二进制中含有的1的数量；
+* 转移方程：dp[i]=i&1+dp[i/2]。
+
 # 347. 前k个高频元素 multimap实现
 * 第一步用一个unordered_map存储元素的出现频率。
 * 第二步用一个unordered_multimap转存频率对应的元素
