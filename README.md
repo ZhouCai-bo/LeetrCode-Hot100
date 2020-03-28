@@ -555,3 +555,8 @@ https://leetcode-cn.com/problems/burst-balloons/solution/dui-fen-zhi-fa-ti-jie-d
 * 第二步用一个priority_queue转存，同时重载比较方法；
 * 循环i=k次，每次出队列，存入结果数组。
 
+# 394. 字符串编码
+采用递归的方式
+* 遇到字符：直接接在res后面；
+* 遇到数字：先找到数字的长度，将数字转换为int，再找到']'的位置，将[]之间的字符串截出，递归调用自身，得到一个子串，然后循环添加子串在末尾；
+* 遇到']'：直接continue，因为'['和']'我们在上一步对数字处理中已经处理过了，
