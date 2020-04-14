@@ -579,3 +579,6 @@ https://leetcode-cn.com/problems/burst-balloons/solution/dui-fen-zhi-fa-ti-jie-d
    * 2.本来和为j-nums[i]是true的，加上nums[i]也是true的；
    * 3.以上均不满足，和为j为false，也就是不可能有和为j的组合情况。
 * 初始化条件：普通0/1背包问题的把所有的dp[j]初始化为0，因为第0层循环代表前0物品的组合，肯定是0；类比本题，第0层循环时，第0个数只能使和为nums[0]的情况存在，因此初始化dp[nums[0]] = true；当然也可以先外部初始化，从第0层开始进循环，令dp[0]=true。
+
+# 437. 路径总和 III
+https://leetcode-cn.com/problems/path-sum-iii/solution/qian-zhui-he-di-gui-hui-su-by-shi-huo-de-xia-tian/
