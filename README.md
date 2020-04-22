@@ -602,3 +602,7 @@ https://leetcode-cn.com/problems/path-sum-iii/solution/qian-zhui-he-di-gui-hui-s
 # 543. 二叉树的直径
 标准二叉树后序遍历。</br>
 时间复杂度O(N)，空间复杂度O(H)。
+
+# 560. 和为K的子数组 DP求解
+* 状态定义：`dp[i]`表示前i个数字和为k的子数组；
+* 转移方程：`dp[i]=dp[i-1]+cnt`，cnt为从索引i-1到0的数组迭代求和为k的次数，这里也可以用前缀和求差的方式来计算，但时间复杂度还是O(n^2)。
