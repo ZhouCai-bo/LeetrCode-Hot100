@@ -606,3 +606,8 @@ https://leetcode-cn.com/problems/path-sum-iii/solution/qian-zhui-he-di-gui-hui-s
 # 560. 和为K的子数组 DP求解
 * 状态定义：`dp[i]`表示前i个数字和为k的子数组；
 * 转移方程：`dp[i]=dp[i-1]+cnt`，cnt为从索引i-1到0的数组迭代求和为k的次数，这里也可以用前缀和求差的方式来计算，但时间复杂度还是O(n^2)。
+
+# 560. 和为K的子数组 前缀和+map
+使用map记录前缀和，遍历一遍数组并累加sum，发现`map[sum-k]`存在时，即可知有一个子串和为k，更新cnt。</br>
+需要注意的一点是，在循环中要寻找`map[sum-k]`在添加当前累加和进map，防止当`k=0`时每一次都会更新cnt。
+
