@@ -598,3 +598,7 @@ https://leetcode-cn.com/problems/path-sum-iii/solution/qian-zhui-he-di-gui-hui-s
 # 494. 目标和 DP实现
 * 状态定义：`dp[i][j]`代表前i个数字和为j的情况有几种；
 * 转移方程：`dp[i][j] = dp[i-1][j-nums[i]] + dp[i-1][j+nums[i]]`，由于数字和可能有负值的情况，要对第二维的索引做处理。
+
+# 543. 二叉树的直径
+标准二叉树后序遍历。</br>
+时间复杂度O(N)，空间复杂度O(H)。
