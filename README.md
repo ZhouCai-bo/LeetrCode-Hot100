@@ -618,3 +618,6 @@ https://leetcode-cn.com/problems/path-sum-iii/solution/qian-zhui-he-di-gui-hui-s
 
 # 617. 合并二叉树
 前序遍历二叉树，合并生成一棵新树。
+
+# 621. 任务调度器 未通过
+用了哈希表的思想，未通过的原因是这个想法的初衷是按照任务的顺序依次插入数组中，导致其中有一些空位其实可以用尾部的元素填充。
