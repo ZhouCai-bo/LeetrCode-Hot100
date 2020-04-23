@@ -621,3 +621,7 @@ https://leetcode-cn.com/problems/path-sum-iii/solution/qian-zhui-he-di-gui-hui-s
 
 # 621. 任务调度器 未通过
 用了哈希表的思想，未通过的原因是这个想法的初衷是按照任务的顺序依次插入数组中，导致其中有一些空位其实可以用尾部的元素填充。
+
+# 621. 任务调度器
+https://leetcode-cn.com/problems/task-scheduler/solution/tong-zi-by-popopop/
+膜拜大佬的解释。
