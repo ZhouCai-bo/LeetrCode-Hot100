@@ -625,3 +625,8 @@ https://leetcode-cn.com/problems/path-sum-iii/solution/qian-zhui-he-di-gui-hui-s
 # 621. 任务调度器
 https://leetcode-cn.com/problems/task-scheduler/solution/tong-zi-by-popopop/
 膜拜大佬的解释。
+
+# 647. 回文子串
+算是一道比较经典的DP吧。
+* 状态定义：`dp[i][j]`代表第i个元素到第j个元素之间的子串是否是回文串；
+* 转移方程：`dp[i][j] = s[i]==s[j] && (j<=i-1 || dp[i-1][j+1])`。
